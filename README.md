@@ -1,2 +1,7 @@
-# personal-site
-Personal site
+# Personal Site 
+
+Tech Stack:
+- Vite
+- React 
+- Tailwind 
+
