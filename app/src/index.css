@@ -73,3 +73,30 @@
     opacity: 0; 
   }
 }
+
+/* Define the different variables in different themes */
+@layer base {
+  :root {
+    --background: hsl(210, 40%, 98%);
+    --foreground: hsl(222, 47%, 11%);
+
+    --card: hsl(0, 0%, 100%);
+
+    --primary: hsl(250, 47%, 60%);
+    --primary-foreground: hsl(210, 40%, 98%);
+
+    --border: 214 32% 91%;
+  }
+
+  .dark {
+    --background: hsl(222, 47%, 4%);
+    --foreground: hsl(213, 31%, 91%);
+
+    --card: hsl(222, 47%, 8%);
+
+    --primary: hsl(250, 65%, 65%);
+    --primary-foreground: hsl(213, 31%, 91%);
+
+    --border: 214 32% 91%;
+  }
+}
