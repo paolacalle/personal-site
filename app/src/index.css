@@ -99,4 +99,89 @@
 
     --border: 214 32% 91%;
   }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth; /* smooth scrolling animation */
+  }
+
+  body {
+    @apply bg-background text-foreground 
+      transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  /* make responsive for different screens */
+  @media (min-width >= 640px) {
+    max-width: 640px;
+  }
+
+  @media (min-width >= 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width >= 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (min-width >= 1280px) {
+    max-width: 1280px;
+  }
+
+  @media (min-width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/* apply -- applies a tailwind style */
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+
+@utility gradient-border {
+  @apply relative rounded-md;
+  background: linear-gradient(
+    to right,
+    hsl(var(--card)),
+    hsl(var(--card))
+  );
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+@utility cosmic-button {
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
+    transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+    hover:scale-105 active:scale-95;
+}
+
+@utility star {
+  @apply absolute bg-white rounded-full;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+
+@utility meteor {
+  @apply absolute bg-linear-to-r from-white to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+#root {
+  max-width : 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
