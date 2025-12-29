@@ -34,3 +34,60 @@ npm -v
 ```
 
 # Setting up the configuration files
+These files are instructions that tell our tools how to behave when building the the site.
+They are read by the build system. 
+
+## The Build Pipeline 
+
+```bash
+npm run dev
+```
+
+The chains of events: 
+
+```pgsql
+1. index.css (PostCSS reads CSS)
+2. postcss.config.js (Tailwind plugin runs)
+3. tailwind.config.js (CSS is generated)
+4. Vite injects CSS into browser
+```
+Each config file controls one step in that pipeline.
+
+## Tailwind Config 
+Tailwind is utility-on-demand. It only generates CSS for the classes you actually use.
+So it needs to scan your files.
+
+```js
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"], // files to scan
+  theme: {
+    extend: {}, // your custom colors, fonts, spacing go here
+  },
+  plugins: [],
+};
+```
+
+## Postcss Config
+CSS transformer engine. It runs plugins that modify the CSS before it reached the browser.
+Tailwind is one of these plugins.
+
+** Why Tailwind needs PostCSS** In order for the application, to know the existance of the 
+Tailwind. 
+
+```js
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {}, // inform of our use of tailwind plugin
+    autoprefixer: {},
+  },
+};
+```
+
+## Why does vite care?
+Vite does not understand Tailwind or PostCSS, but it knows how to call PostSS when it sees
+a CSS file, so 
+
+- Vite calls PostCSS
+- PostCSS reads `postcss.config.js`
+- Tailwind plugin reads `tailwind.config.js`
+- Result is a compiled CSS streamed into the browser
