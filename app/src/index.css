@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -11,93 +10,81 @@
 
   --color-card: hsl(var(--card));
 
-  /* Animations */
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-in forwards;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
-}
 
-/* Describes how the animations should act */
-@keyframes float {
-  0%, 
-  100% {
-    transform: translateY(0px);
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
-  50% {
-    transform: translateY(-10px);
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
-}
-
-@keyframes pulse-subtle {
-  /*  opacity changes */
-  0%, 
-  100% {
-    opacity: 1;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes fade-in {
-  /* Goes from invisible to visible with a slight upward movement */
-  from {
-    opacity: 0; 
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes meteor {
-  /* 
-  Starts at a rotation of 215 degrees and moves left while fading out
-  Then disappears off-screen with a leftward translation of 500px
-  */
-  0% {
-    transform: rotate(215deg) translateX(0);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(215deg) translateX(-500px);
-    opacity: 0; 
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
   }
 }
 
-/* Define the different variables in different themes */
 @layer base {
   :root {
-    --background: hsl(210, 40%, 98%);
-    --foreground: hsl(222, 47%, 11%);
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
-    --card: hsl(0, 0%, 100%);
+    --card: 0 0% 100%;
 
-    --primary: hsl(250, 47%, 60%);
-    --primary-foreground: hsl(210, 40%, 98%);
+    --primary: 250 47% 60%;
+    --primary-foreground: 210 40% 98%;
 
     --border: 214 32% 91%;
   }
 
   .dark {
-    --background: hsl(222, 47%, 4%);
-    --foreground: hsl(213, 31%, 91%);
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: hsl(222, 47%, 8%);
+    --card: 222 47% 8%;
 
-    --primary: hsl(250, 65%, 65%);
-    --primary-foreground: hsl(213, 31%, 91%);
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
 
-    --border: 214 32% 91%;
+    --border: 217 33% 20%;
   }
 
   * {
@@ -105,12 +92,11 @@
   }
 
   html {
-    @apply scroll-smooth; /* smooth scrolling animation */
+    @apply scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground 
-      transition-colors duration-300;
+    @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -119,29 +105,23 @@
   margin-inline: auto;
   padding-inline: 2rem;
 
-  /* make responsive for different screens */
-  @media (min-width >= 640px) {
+  @media (width >= 640px) {
     max-width: 640px;
   }
-
-  @media (min-width >= 768px) {
+  @media (width >= 768px) {
     max-width: 768px;
   }
-
-  @media (min-width >= 1024px) {
+  @media (width >= 1024px) {
     max-width: 1024px;
   }
-
-  @media (min-width >= 1280px) {
+  @media (width >= 1280px) {
     max-width: 1280px;
   }
-
-  @media (min-width >= 1400px) {
+  @media (width >= 1400px) {
     max-width: 1400px;
   }
 }
 
-/* apply -- applies a tailwind style */
 @utility text-glow {
   @apply relative;
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
@@ -153,34 +133,29 @@
 
 @utility gradient-border {
   @apply relative rounded-md;
-  background: linear-gradient(
-    to right,
-    hsl(var(--card)),
-    hsl(var(--card))
-  );
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box;
   border: 1px solid transparent;
 }
 
 @utility cosmic-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-    transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-    hover:scale-105 active:scale-95;
+         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+         hover:scale-105 active:scale-95;
 }
 
 @utility star {
-  @apply absolute bg-white rounded-full;
+  @apply absolute rounded-full bg-white;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
-
 @utility meteor {
-  @apply absolute bg-linear-to-r from-white to-transparent rounded-full;
+  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
 #root {
-  max-width : 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
