@@ -12,6 +12,21 @@ export const StarBackground = () => {
     useEffect(() => {
         generateStars();
         generateMeteors();
+
+
+        // regenerate stars
+        const handleResize = () => {
+            generateStars();
+        };
+
+        // add event listener
+        window.addEventListener('resize', handleResize);
+
+        // cleanup -- in case component unmounts -- prevent memory leaks
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
     }, []); // empty dependency array to run only once on mount
 
     const generateStars = () => {
