@@ -1,4 +1,4 @@
-
+import { ArrowBigDown } from "lucide-react"
 
 export const HeroSection = () => {
     return (
@@ -23,7 +23,24 @@ export const HeroSection = () => {
                         backend systems, databases, and analysis. I'm curious by nature and 
                         love turning data into insight through thoughtful engineering and ML.
                     </p>
+
+                    <a 
+                        href="#projects"
+                        className="pt-4 cosmic-button opacity-0 animate-fade-in-delay-4"
+                    >
+                        View My Work
+                    </a>
                 </div>
+            </div>
+
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+                <span
+                    className="text-sm text-muted-foreground mb-2"
+                > Scroll
+                </span>
+                <ArrowBigDown
+                    className="h-4 w-4 text-primary"
+                />
             </div>
         </section>
     )
