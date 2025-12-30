@@ -1,6 +1,27 @@
 import { ArrowBigDown } from "lucide-react"
+import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
 
 export const HeroSection = () => {
+    const [haveScrolled, setHaveScrolled] = useState(false);
+
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY > window.innerHeight * 0.1) {
+                setHaveScrolled(true);
+            } else {
+                setHaveScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", onScroll);
+
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        };
+    }, []);
+
     return (
         <section 
             id="hero"
@@ -33,7 +54,16 @@ export const HeroSection = () => {
                 </div>
             </div>
 
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+            <div 
+                className={cn(
+                    "absolute bottom-0 left-1/2",
+                    "transform -translate-x-1/2", 
+                    "flex flex-col items-center animate-bounce",
+                    haveScrolled 
+                    ? "opacity-0 pointer-events-none transition-opacity duration-500"
+                    : "opacity-100 transition-opacity duration-500"
+                )}
+            >
                 <span
                     className="text-sm text-muted-foreground mb-2"
                 > Scroll
