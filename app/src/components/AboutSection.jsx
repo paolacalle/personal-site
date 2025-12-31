@@ -88,7 +88,7 @@ export const AboutSection = () => {
                                     <h4 className="font-semibold text-lg">Project Management</h4>
                                     <p className="text-muted-foreground">
                                         Planning, coordinating, and delivering projects 
-                                        from idea to execution.
+                                        from idea to execution through agile methodologies.
                                     </p>
                                 </div>
                             </div>
