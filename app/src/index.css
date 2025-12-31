@@ -127,8 +127,12 @@
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
+@utility hover-glow {
+  @apply transition-shadow duration-300 hover:shadow-[0_0_15px_rgba(139,92,246,0.6)];
+}
+
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-transform duration-300 hover:scale-[1.04] hover:shadow-lg;
 }
 
 @utility gradient-border {

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { saveAs } from "file-saver"
+import { Briefcase, Code, Users} from "lucide-react"
 
 export const AboutSection = () => {
 
@@ -49,13 +50,49 @@ export const AboutSection = () => {
                     </div>
 
                     <div className="grid grid-cols-1 gap-6">
-                        <div className="gradient-border p-6 card-hover">
+                        <div className="gradient-border p-6 card-hover hover-glow">
                             <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-primary/10"></div>
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <Code className="h-6 w-6 text-primary"/>
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-semibold text-lg">Data Engineering</h4>
+                                    <p className="text-muted-foreground">
+                                        Experience designing relational databases and data 
+                                        models, building ETL pipelines, and supporting analytics 
+                                        through well-structured data warehouses.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div className="gradient-border p-6 card-hover"></div>
-                        <div className="gradient-border p-6 card-hover"></div>
+                        <div className="gradient-border p-6 card-hover hover-glow">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <Users className="h-6 w-6 text-primary"/>
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-semibold text-lg">Collaboration</h4>
+                                    <p className="text-muted-foreground">
+                                        Work well with others, communicate clearly, and 
+                                        enjoy collaborating to turn ideas into working systems.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="gradient-border p-6 card-hover hover-glow">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <Briefcase className="h-6 w-6 text-primary"/>
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-semibold text-lg">Project Management</h4>
+                                    <p className="text-muted-foreground">
+                                        Planning, coordinating, and delivering projects 
+                                        from idea to execution.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
