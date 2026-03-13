@@ -35,7 +35,7 @@ export const ResumeSection = () => {
         } else if (window.innerWidth < 1024) {
         setPageWidth(600);
         } else {
-        setPageWidth(800);
+        setPageWidth(660);
         }
     };
 
@@ -74,7 +74,7 @@ export const ResumeSection = () => {
 
         opening: {
             width: pageWidth + 80,
-            height: pageWidth < 500 ? 430 : pageWidth < 700 ? 580 : 820,
+            height: pageWidth < 300 ? 430 : pageWidth < 400 ? 580 : 820,
             borderRadius: "24px",
             scale: 1.02,
             opacity: 1,
@@ -85,7 +85,7 @@ export const ResumeSection = () => {
 
         resume: {
             width: pageWidth + 80,
-            height: pageWidth < 500 ? 430 : pageWidth < 700 ? 580 : 820,
+            height: pageWidth < 300 ? 430 : pageWidth < 400 ? 580 : 820,
             borderRadius: "24px",
             scale: 1,
             opacity: 1,
@@ -108,30 +108,32 @@ export const ResumeSection = () => {
 
     return (
         <section id="resume" className="resume-section">
-            {/* Open  */}
-            <div className="resume-header flex items-center justify-between mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-center w-full">
-                    My <span className="text-primary">Resume</span>
-                </h2>
+            {/* header  */}
+            <h2 className="text-3xl md:text-4xl font-bold text-center w-full">
+                My <span className="text-primary">Resume</span>
+            </h2>
 
-                <div className="flex gap-4">
+            {/* buttons logic  */}
+            <div className="justify-center flex pt-8">
+
+                <div className="justify-center">
                     {stage === "resume" && (
-                        <button
+                        <a
                             onClick={handleClose}
-                            className="cosmic-button-sm"
+                            className="cosmic-button"
                             aria-label="Close resume preview"
                         >
-                            Close
-                        </button>
+                            Close Preview
+                        </a>
                     )}
                     {stage === "moon" && (
-                        <button
+                        <a
                             onClick={handleReopen}
-                            className="cosmic-button-sm"
+                            className="cosmic-button"
                             aria-label="Reopen resume preview"
                         >
-                            Open
-                        </button>
+                            Open Preview
+                        </a>
                     )}
                 </div>
             </div>
@@ -246,7 +248,7 @@ export const ResumeSection = () => {
                     </AnimatePresence>
                 </div>
             </div>
-            
+
         </section>
     );
 };
