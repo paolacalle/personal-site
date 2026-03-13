@@ -42,7 +42,7 @@ export const ResumeSection = () => {
     return (
     <section
         id="resume"
-        className="py-20 px-4 md:px-8 bg-secondary/30"
+        className="container py-20 px-4 md:px-8 bg-secondary/30"
     >
         <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
