@@ -164,3 +164,167 @@
   padding: 0;
   text-align: center;
 }
+
+
+/* Resume Section CSS */
+.resume-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1rem;
+}
+
+.resume-content {
+  position: relative;
+  z-index: 2;
+}
+
+.resume-preview-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 900px;
+}
+
+.resume-card {
+  position: relative;
+  z-index: 3;
+  max-width: fit-content;
+}
+
+/* Moon behind the resume */
+.resume-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1rem;
+}
+
+.resume-content {
+  position: relative;
+  z-index: 2;
+}
+
+.resume-scene {
+  position: relative;
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-transform-shell {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.97) 0%, rgba(228, 232, 240, 0.94) 30%, rgba(190, 198, 214, 0.9) 62%, rgba(150, 160, 180, 0.84) 100%);
+  isolation: isolate;
+}
+
+.moon-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.moon-surface::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(180, 200, 255, 0.08) 40%, transparent 72%);
+  filter: blur(24px);
+}
+
+.moon-crater {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 38% 38%, rgba(120, 128, 145, 0.22), rgba(120, 128, 145, 0.08) 65%, transparent 80%);
+  box-shadow: inset -8px -8px 12px rgba(255, 255, 255, 0.1);
+}
+
+.crater-1 {
+  width: 64px;
+  height: 64px;
+  top: 22%;
+  left: 20%;
+}
+
+.crater-2 {
+  width: 46px;
+  height: 46px;
+  top: 58%;
+  left: 66%;
+}
+
+.crater-3 {
+  width: 34px;
+  height: 34px;
+  top: 32%;
+  left: 68%;
+}
+
+.crater-4 {
+  width: 54px;
+  height: 54px;
+  top: 70%;
+  left: 28%;
+}
+
+.resume-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.resume-card {
+  max-width: fit-content;
+  backdrop-filter: blur(12px);
+}
+
+@media (max-width: 1024px) {
+  .resume-scene {
+    min-height: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .resume-section {
+    padding: 4rem 1rem;
+  }
+
+  .resume-scene {
+    min-height: 420px;
+  }
+
+  .resume-inner {
+    padding: 0.75rem;
+  }
+
+  .crater-1 {
+    width: 34px;
+    height: 34px;
+  }
+
+  .crater-2 {
+    width: 28px;
+    height: 28px;
+  }
+
+  .crater-3 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .crater-4 {
+    width: 30px;
+    height: 30px;
+  }
+}

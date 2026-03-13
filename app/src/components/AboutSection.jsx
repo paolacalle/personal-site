@@ -1,19 +1,7 @@
-import { cn } from "@/lib/utils"
-import { Document, Page } from 'react-pdf';
 import { Briefcase, Code, Users} from "lucide-react"
-import { ResumeSection } from "./ResumeSection";
-import { useState } from "react";
+import { ResumeDownloadButton } from "./ResumeSection";
 
 export const AboutSection = () => {
-
-    // State to control whether the resume is displayed
-    const [showResume, setShowResume] = useState(false);
-    
-    // Function to toggle the resume display
-    const toggleResume = () => {
-        setShowResume(!showResume);
-    }
-
     return (
 
         <section
@@ -49,16 +37,9 @@ export const AboutSection = () => {
                             <a href="#contact" className="cosmic-button">
                                 Get In Touch
                             </a>
-
-                            <a className={cn(
-                                "px-6 rounded-full border border-primary text-primary",
-                                "hover:bg-primary/10 transition-colors duration-300",
-                                "py-3 text-center"
-                            )} onClick={toggleResume}>
-                                {showResume ? "Hide Resume" : "View Resume"}
-                            </a>
+                            
+                            <ResumeDownloadButton />
                         </div>
-
                     </div>
 
                     <div className="grid grid-cols-1 gap-6">
@@ -107,10 +88,7 @@ export const AboutSection = () => {
                         </div>
                     </div>
                 </div>
-
-
-                {/* Conditionally render the ResumeSection based on showResume state */}
-                {showResume && <ResumeSection />}
+    
             </div>
         </section>
     )
