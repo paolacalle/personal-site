@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
     {name: 'Home', href: '#hero'},
@@ -60,24 +61,30 @@ export const Navbar = () => {
                             {item.name}
                         </a>
                     ))}
+                    <ThemeToggle />
                 </div>
 
                 {/* mobile navigation items 
                 If the menu is open, show the close icon, else show the hamburger icon */}
 
-                <button 
-                    onClick={toggleMenu}
-                    className="md:hidden p-2 text-foreground z-50"
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                >
-                    {isMenuOpen 
-                    ? <X  size={24}/> 
-                    : <Menu size={24}/>
-                    }
-                </button>
+                <div className="md:hidden md:flex space-x-1 z-50">
+                    <ThemeToggle />
+
+                    <button 
+                        onClick={toggleMenu}
+                        className="md:hidden p-2 text-foreground z-50"
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    >
+                        {isMenuOpen 
+                        ? <X  size={24}/> 
+                        : <Menu size={24}/>
+                        }
+                    </button>
+
+                </div>
 
                 <div className={cn(
-                    "fixed inset-0 bg-background/95 backdrop-bluer-md z-40 flex flex-col items-center justify-center",
+                    "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
                     "transition-all duration-300 md:hidden",
                     isMenuOpen 
                     ? "opacity-100 pointer-events-auto" 
@@ -100,3 +107,4 @@ export const Navbar = () => {
         </nav>
     )
 };
+
