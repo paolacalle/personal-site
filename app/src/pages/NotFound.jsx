@@ -1,8 +1,10 @@
+import { BlinkingAlien } from "@/components/BlinkingAlien"
 
 export const NotFound = () => {
     return (
+
         <div>
-            404 - Page Not Found
+            <BlinkingAlien />
         </div>
     )
 }
