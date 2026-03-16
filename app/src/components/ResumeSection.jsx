@@ -31,7 +31,7 @@ export const ResumeSection = () => {
         if (window.innerWidth < 640) {
         setPageWidth(300);
         } else if (window.innerWidth < 768) {
-        setPageWidth(420);
+        setPageWidth(400);
         } else if (window.innerWidth < 1024) {
         setPageWidth(600);
         } else {
