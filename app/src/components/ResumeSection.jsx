@@ -60,6 +60,26 @@ export const ResumeSection = () => {
         setTimeout(() => setStage("resume"), 1800);
     }
 
+    useEffect(() => {
+        // scroll away from the resume section when it's opened
+        if (stage === "resume") {
+            // when the user scrolls away from the resume section, close the preview
+            // get the distance from the top of the resume section to the top of the viewport
+            const resumeSection = document.getElementById("resume");
+            const handleScroll = () => {
+                if (resumeSection) {
+                    const distance = resumeSection.getBoundingClientRect().top + pageWidth / 2; // add some buffer
+                    if (distance < 0 || distance > window.innerHeight) {
+                        handleClose();
+                    }
+                }
+            };
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }
+
+    }, [stage]);
+
     const shellVariants = {
         moon: {
             width: 280,
