@@ -93,8 +93,8 @@ export const ResumeSection = () => {
         },
 
         opening: {
-            width: pageWidth + 80,
-            height: pageWidth < 300 ? 430 : pageWidth < 400 ? 580 : 820,
+            width: pageWidth + 60,
+            height: pageWidth < 300 ? 400 : pageWidth < 400 ? 560 : 820,
             borderRadius: "24px",
             scale: 1.02,
             opacity: 1,
@@ -104,8 +104,8 @@ export const ResumeSection = () => {
         },
 
         resume: {
-            width: pageWidth + 80,
-            height: pageWidth < 300 ? 430 : pageWidth < 400 ? 580 : 820,
+            width: pageWidth + 60,
+            height: pageWidth < 300 ? 400 : pageWidth < 400 ? 560 : 820,
             borderRadius: "24px",
             scale: 1,
             opacity: 1,
