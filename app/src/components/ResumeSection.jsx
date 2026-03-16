@@ -51,13 +51,13 @@ export const ResumeSection = () => {
 
     function handleClose() {
         setStage("closing");
-        setTimeout(() => setStage("moon"), 1700);
+        setTimeout(() => setStage("moon"), 10);
     }
 
     function handleReopen() {
         setStage("moon");
         setTimeout(() => setStage("opening"), 80);
-        setTimeout(() => setStage("resume"), 1800);
+        setTimeout(() => setStage("resume"), 80);
     }
 
     useEffect(() => {
@@ -89,29 +89,29 @@ export const ResumeSection = () => {
             opacity: 1,
             boxShadow:
             "0 0 40px rgba(255,255,255,0.16), 0 0 90px rgba(180,200,255,0.12), 0 0 150px rgba(255,255,255,0.08)",
-            transition: { duration: 0.8, ease: [0.77, 0, 0.175, 1] },
+            transition: { duration: 0.4, ease: "easeIn"  },
         },
 
         opening: {
             width: pageWidth + 60,
             height: pageWidth < 300 ? 400 : pageWidth < 400 ? 560 : 820,
-            borderRadius: "24px",
-            scale: 1.02,
+            // borderRadius: "24px",
+            scale: 1,
             opacity: 1,
-            boxShadow:
-            "0 0 30px rgba(255,255,255,0.10), 0 24px 60px rgba(0,0,0,0.28)",
-            transition: { duration: 1.8, ease: [0.77, 0, 0.175, 1] },
+            // boxShadow:
+            // "0 0 30px rgba(255,255,255,0.10), 0 24px 60px rgba(0,0,0,0.28)",
+            transition: { duration: 0.4, ease: "easeIn" },
         },
 
         resume: {
-            width: pageWidth + 60,
-            height: pageWidth < 300 ? 400 : pageWidth < 400 ? 560 : 820,
+            width: pageWidth + 100,
+            height: pageWidth < 300 ? 450 : pageWidth < 400 ? 600 : 800,
             borderRadius: "24px",
             scale: 1,
             opacity: 1,
-            boxShadow:
-            "0 0 22px rgba(255,255,255,0.06), 0 24px 60px rgba(0,0,0,0.34)",
-            transition: { duration: 0.5, ease: "easeOut" },
+            // boxShadow:
+            // "0 0 22px rgba(255,255,255,0.06), 0 24px 60px rgba(0,0,0,0.34)",
+            transition: { duration: 0.05, ease: "easeOut" },
         },
 
         closing: {
@@ -120,8 +120,8 @@ export const ResumeSection = () => {
             borderRadius: "9999px",
             scale: 0.92,
             opacity: 0.95,
-            boxShadow:
-            "0 0 50px rgba(255,255,255,0.18), 0 0 110px rgba(180,200,255,0.14), 0 0 180px rgba(255,255,255,0.1)",
+            // boxShadow:
+            // "0 0 50px rgba(255,255,255,0.18), 0 0 110px rgba(180,200,255,0.14), 0 0 180px rgba(255,255,255,0.1)",
             transition: { duration: 1.6, ease: [0.77, 0, 0.175, 1] },
         },
     };
@@ -232,7 +232,7 @@ export const ResumeSection = () => {
                                 }}
                                 transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
                                 >
-                                    <div className="resume-card rounded-2xl bg-white shadow-2xl border border-border p-4 md:p-8 overflow-hidden">
+                                    <div className="resume-card md:p-8">
                                         <Document
                                         file={resumePDF}
                                         onLoadSuccess={onDocumentLoadSuccess}
@@ -249,10 +249,10 @@ export const ResumeSection = () => {
                                         >
                                         {numPages && (
                                             <div className="flex justify-center">
-                                            <div className="shadow-lg rounded-lg overflow-hidden">
+                                            <div className="">
                                                 <Page
                                                 pageNumber={1}
-                                                width={pageWidth}
+                                                width={pageWidth - (pageWidth < 400 ? 0 : pageWidth * 0.15)}
                                                 renderTextLayer={false}
                                                 renderAnnotationLayer={false}
                                                 />

@@ -206,10 +206,11 @@
 
 .resume-scene {
   position: relative;
-  min-height: 900px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .resume-transform-shell {
@@ -281,14 +282,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
 }
 
 .resume-card {
   max-width: fit-content;
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
-  border-radius: 24px;
+  /* border-radius: 24px; */
 }
 
 @media (max-width: 1024px) {
