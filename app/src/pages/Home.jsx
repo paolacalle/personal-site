@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar"
 import { HeroSection } from "@/components/HeroSection"
 import { AboutSection } from "@/components/AboutSection"
 import { SkillsSection } from "../components/SkillsSection"
+import { JourneySection } from "../components/JourneySection"
 import { ResumeSection } from "../components/ResumeSection"
 import { FooterSection } from "../components/FooterSection"
 import { useEffect } from "react"
@@ -43,6 +44,8 @@ export const Home = () => {
                 <AboutSection />
                 {/* Skills Section */}
                 <SkillsSection />
+                {/* Journey Section */}
+                <JourneySection />
                 {/* Resume Section */}
                 <ResumeSection />
             </main>
