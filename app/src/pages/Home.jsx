@@ -5,8 +5,10 @@ import { HeroSection } from "@/components/HeroSection"
 import { AboutSection } from "@/components/AboutSection"
 import { SkillsSection } from "../components/SkillsSection"
 import { ResumeSection } from "../components/ResumeSection"
+import { FooterSection } from "../components/FooterSection"
 import { useEffect } from "react"
 import { Toaster, toast } from "react-hot-toast"
+
 
 
 export const Home = () => {
@@ -46,6 +48,7 @@ export const Home = () => {
             </main>
 
             {/* Footer */}
+            <FooterSection />
 
 
         </div>

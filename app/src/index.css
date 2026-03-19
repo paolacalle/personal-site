@@ -331,3 +331,37 @@
     height: 30px;
   }
 }
+
+/* Footer Button (NOT the whole footer anymore) */
+.footer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: transform 0.25s ease, 
+              border-color 0.25s ease, 
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+}
+
+.footer-button:hover {
+  transform: translateY(-2px) scale(1.05);
+
+  border-color: hsl(var(--primary));
+
+  background: rgba(144, 238, 144, 0.08);
+
+  text-shadow: 0 0 8px rgba(144, 238, 144, 0.6);
+}
+
+.footer-button:active {
+  transform: scale(0.97);
+}
