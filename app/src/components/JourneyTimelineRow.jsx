@@ -10,7 +10,7 @@ export function JourneyTimelineRow({ item , position }) {
 
     return (
         <div className="journey-row">
-            <div className="journey-row-trak">
+            <div className="journey-row-track">
                 <motion.div
                     className="journey-row-bar"
                     style={{
