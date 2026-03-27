@@ -1,0 +1,138 @@
+.journey-section {
+  padding: 6rem 1rem;
+  position: relative;
+}
+
+.journey-section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.journey-section-title-accent {
+  color: hsl(var(--primary));
+}
+
+.journey-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 3px dotted hsl(var(--primary));
+  border-right: 2px dotted hsl(var(--primary));
+  padding: 0 1rem;
+}
+
+.journey-timeline-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.journey-timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+}
+
+.journey-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.journey-row-track {
+  position: relative;
+  flex: 1;
+  height: 2rem;
+  border-radius: 9999px;
+  /* background: none; */
+  overflow: visible;
+}
+
+.journey-row-bar.active{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem;
+  background: hsl(var(--primary));
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.journey-row-bar.inactive {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem;
+  background: hsl(var(--foreground));
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.journey-row-tooltip {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  width: min(18rem, 90vw);
+}
+
+.journey-row-bar:hover .journey-row-tooltip,
+.journey-row-bar:focus .journey-row-tooltip,
+.journey-row-bar.tooltip-open .journey-row-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.experience-card {
+  background: white;
+  color: rgb(17 24 39);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-100%);
+  z-index: 100;
+}
+
+.experience-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.experience-card-place {
+  color: rgb(75 85 99);
+  margin-bottom: 0.75rem;
+}
+
+.experience-card-date {
+  color: rgb(107 114 128);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.experience-card-description {
+  color: rgb(55 65 81);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.experience-card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-card-skill {
+  background: hsl(var(--primary));
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
