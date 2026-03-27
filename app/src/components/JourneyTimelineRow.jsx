@@ -17,7 +17,7 @@ export function JourneyTimelineRow({ item , position }) {
                         left: `${position.startPercent}%`,
                         width: `${width}%`,
                     }}
-                    whileTap={{ scale : 1.03 }}
+                    whileHover={{ scale : 1.03 }}
                     transition={{ duration : 0.2 }}
                 >
 

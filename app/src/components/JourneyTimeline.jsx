@@ -10,6 +10,7 @@ export function JourneyTimeline({ items, itemPositions, startDate, endDate }) {
                     items.map((item) => {
                         return (
                             <JourneyTimelineRow
+                                key={item.id}
                                 item={item}
                                 position={itemPositions[item.id]}
                             />
