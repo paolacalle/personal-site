@@ -1,5 +1,31 @@
 
-// helper code 
+// helper code
+
+// Safari does not support "Month YYYY" date strings (e.g. "September 2025") in new Date().
+// This map allows us to manually parse that format in a cross-browser-safe way.
+const MONTH_MAP = {
+    January: 0, February: 1, March: 2, April: 3,
+    May: 4, June: 5, July: 6, August: 7,
+    September: 8, October: 9, November: 10, December: 11,
+};
+
+// Parses "Month YYYY" strings safely across all browsers, including Safari.
+// Falls back to native Date parsing for other formats.
+function parseDate(dateString) {
+    if (!dateString || dateString === "Present") return null;
+
+    const parts = dateString.trim().split(/\s+/);
+    if (parts.length === 2) {
+        const month = MONTH_MAP[parts[0]];
+        const year = parseInt(parts[1], 10);
+        if (month !== undefined && !Number.isNaN(year)) {
+            return new Date(year, month, 1);
+        }
+    }
+
+    // fallback for ISO or other unambiguous formats
+    return new Date(dateString);
+}
 
 export function formatDate(dateString) {
     // handle explicit "Present" sentinel
@@ -8,10 +34,10 @@ export function formatDate(dateString) {
     // handle missing/empty dates separately
     if (!dateString) return "—";
 
-    const date = new Date(dateString);
+    const date = parseDate(dateString);
 
     // guard against invalid Date results
-    if (Number.isNaN(date.getTime())) return "—";
+    if (!date || Number.isNaN(date.getTime())) return "—";
 
     // parse date and format as "MMM YYYY"
     return date.toLocaleString(
@@ -23,7 +49,9 @@ export function formatDate(dateString) {
 
 export function getTimeValue(dateStr) {
     // if present, return current timestamp, else return timestamp of the date
-    return dateStr === "Present" ? Date.now() : new Date(dateStr).getTime();
+    if (dateStr === "Present") return Date.now();
+    const date = parseDate(dateStr);
+    return date ? date.getTime() : NaN;
 }
 
 export function sortJourneyItems(items) {
