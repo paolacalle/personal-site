@@ -2,11 +2,19 @@
 // helper code 
 
 export function formatDate(dateString) {
-    // handle "Present" case
-    if (!dateString || dateString === "Present") return "Present";
+    // handle explicit "Present" sentinel
+    if (dateString === "Present") return "Present";
+
+    // handle missing/empty dates separately
+    if (!dateString) return "—";
+
+    const date = new Date(dateString);
+
+    // guard against invalid Date results
+    if (Number.isNaN(date.getTime())) return "—";
 
     // parse date and format as "MMM YYYY"
-    return new Date(dateString).toLocaleString(
+    return date.toLocaleString(
         "default",
         { month: "short", year: "numeric" }
     );
