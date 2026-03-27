@@ -18,8 +18,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-left: 2px solid hsl(var(--primary));
-  border-right: 2px solid hsl(var(--primary));
+  border-left: 5px dotted hsl(var(--primary));
+  border-right: 5px dotted hsl(var(--primary));
   padding: 0 1rem;
 }
 

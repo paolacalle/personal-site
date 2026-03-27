@@ -15,7 +15,7 @@ export function JourneyTimelineRow({ item , position }) {
                 {/* if the item is active (end-date is present) */}
 
                 <motion.div
-                    className={`journey-row-bar ${item.endDate === "Present" ? "active" : "inactive"}`}
+                    className={`journey-row-bar hover-glow ${item.endDate === "Present" ? "active" : "inactive"}`}
                     style={{
                         left: `${position.startPercent}%`,
                         width: `${width}%`,

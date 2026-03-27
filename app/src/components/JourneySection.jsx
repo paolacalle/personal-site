@@ -34,6 +34,15 @@ export function JourneySection() {
                     My <span className="text-primary">Journey</span>
                 </h2>
 
+                <h1 className="text-lg md:text-xl text-muted-foreground">
+                    A timeline of my roles and growth over the years.
+                    Hover over each item to see more details about the experience, 
+                    including descriptions and skills gained. 
+                </h1>
+
+                {/* space */}
+                <div className="my-10" />
+
                 <JourneyTimeline
                     items={sortedItems}
                     itemPositions={itemPositions}
