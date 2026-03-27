@@ -5,6 +5,12 @@ import "@/styles/journey.css";
 export function JourneyTimeline({ items, itemPositions, startDate, endDate }) {
     return (
         <div className="journey-timeline">
+
+            <div className="journey-timeline-labels">
+                <span>{formatDate(startDate)}</span>
+                <span>{formatDate(endDate)}</span>
+            </div>
+
             <div className="journey-timeline-rows">
                 {
                     items.map((item) => {
@@ -19,10 +25,10 @@ export function JourneyTimeline({ items, itemPositions, startDate, endDate }) {
                 }
             </div>
 
-            <div className="journey-timeline-labels">
+            {/* <div className="journey-timeline-labels">
                 <span>{formatDate(startDate)}</span>
                 <span>{formatDate(endDate)}</span>
-            </div>
+            </div> */}
         </div>
     )
 }

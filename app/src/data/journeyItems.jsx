@@ -10,7 +10,7 @@ const journeyItems = [
     id: 1,
     title: "IT Support Assistant",
     place: "NYU Institute of Fine Arts",
-    startDate: "September 2024",
+    startDate: "September 2025",
     endDate: "Present",
     description:
         "Supported faculty and staff with technical troubleshooting, system setup, and operational IT workflows.",
