@@ -141,6 +141,7 @@ export function JourneySection() {
 
         // get current time
         const now = Date.now();
+        
 
         // if the the end_date is present, then simply set end time to now
         const aEnd = a.endDate === "Present" ? now : new Date(a.endDate).getTime();
