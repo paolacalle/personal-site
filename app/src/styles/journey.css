@@ -48,7 +48,7 @@
   overflow: visible;
 }
 
-.journey-row-bar {
+.journey-row-bar.active{
   position: absolute;
   top: 50%;
   /* transform: translateY(-50%); */
@@ -56,6 +56,15 @@
   background: hsl(var(--primary));
   border-radius: 9999px;
   cursor: pointer;
+}
+
+.journey-row-bar.inactive {
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  height: 1rem;
+  background: black;
+  border-radius: 9999px;
 }
 
 .journey-row-tooltip {
