@@ -1,4 +1,4 @@
-import { formatDate } from '@/utils/journey.js';
+import { formatDate } from '@/utils/journey';
 import '@/styles/journey.css';
 
 export function ExperienceCard({ item }) {
