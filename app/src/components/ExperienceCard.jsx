@@ -13,8 +13,8 @@ export function ExperienceCard({ item }) {
             <p className="experience-card-description">{item.description}</p>
 
             <div className="experience-card-skills">
-                {item.skills.map((skill, index) => (
-                    <span key={index} className="experience-card-skill">
+                {item.skills.map((skill) => (
+                    <span key={skill} className="experience-card-skill">
                         {skill}
                     </span>
                 ))}

@@ -54,7 +54,7 @@
 .journey-row-bar.active{
   position: absolute;
   top: 50%;
-  /* transform: translateY(-50%); */
+  transform: translateY(-50%);
   height: 1rem;
   background: hsl(var(--primary));
   border-radius: 9999px;
@@ -64,24 +64,28 @@
 .journey-row-bar.inactive {
   position: absolute;
   top: 50%;
-  /* transform: translateY(-50%); */
+  transform: translateY(-50%);
   height: 1rem;
   background: hsl(var(--foreground));
   border-radius: 9999px;
+  cursor: pointer;
 }
 
 .journey-row-tooltip {
   position: absolute;
   top: calc(100% + 0.75rem);
   left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
   z-index: 100;
-  min-width: 18rem;
+  width: min(18rem, 90vw);
 }
 
-.journey-row-bar:hover .journey-row-tooltip {
+.journey-row-bar:hover .journey-row-tooltip,
+.journey-row-bar:focus .journey-row-tooltip,
+.journey-row-bar.tooltip-open .journey-row-tooltip {
   opacity: 1;
   pointer-events: auto;
 }

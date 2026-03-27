@@ -30,15 +30,15 @@ export function JourneySection() {
     return (
         <section id="journey" className="journey-section">
             <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text4xl font-bold mb-12 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     My <span className="text-primary">Journey</span>
                 </h2>
 
-                <h1 className="text-lg md:text-xl text-muted-foreground">
+                <p className="text-lg md:text-xl text-muted-foreground">
                     A timeline of my roles and growth over the years.
-                    Hover over each item to see more details about the experience, 
+                    Hover or tap each item to see more details about the experience, 
                     including descriptions and skills gained. 
-                </h1>
+                </p>
 
                 {/* space */}
                 <div className="my-10" />
