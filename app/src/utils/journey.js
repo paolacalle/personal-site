@@ -1,7 +1,7 @@
 
 // helper code
 
-// Safari does not support "Month YYYY" date strings (e.g. "September 2025") in new Date().
+// Safari does not support "Month YYYY" date strings in new Date().
 // This map allows us to manually parse that format in a cross-browser-safe way.
 const MONTH_MAP = {
     January: 0, February: 1, March: 2, April: 3,
